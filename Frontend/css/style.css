@@ -13,9 +13,8 @@
 }
 
 body {
-    background: url("https://i.gifer.com/fzUl.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url("../images/background.png");
+    
         color: #f2f2f2;
 }
 
