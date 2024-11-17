@@ -14,7 +14,9 @@
 
 body {
     background: url("https://i.gifer.com/fzUl.gif");
-    color: #f2f2f2;
+    background-size: cover;
+    background-repeat: no-repeat;
+        color: #f2f2f2;
 }
 
 .container {
