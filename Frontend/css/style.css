@@ -1,159 +1,354 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "cursive", sans-serif;
 }
 
 :root {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    background: url("../images/background.png");
-    
-        color: #f2f2f2;
+  background: #0A0A0A; /* Fundo escuro */
+  color: #FF0000; /* Texto vermelho */
+  user-select: none;
+  overflow: hidden;
 }
 
 .container {
-    width: 100%;
-    height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login {
-    width: 100%;
-    max-width: 330px;
-    background-color: #212121;
-    border-radius: 5px;
-    padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  background-color: rgba(18, 18, 18, 0.9); /* Fundo escuro */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
 }
 
 .login > h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #FF0000; /* Título vermelho */
 }
 
 .login__form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .login__input {
-    border: none;
-    padding: 15px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    background-color: #121212;
-    color: #f2f2f2;
-    outline: none;
-    border-radius: 5px;
+  border: 2px solid #FF0000; /* Borda vermelha */
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #121212; /* Fundo escuro */
+  color: #FF0000; /* Texto vermelho */
+  outline: none;
+  border-radius: 5px;
+  transition: border 0.3s;
 }
 
 .login__input:focus {
-    outline: 2px solid #f2f2f2;
+  border: 2px solid #FF0000; /* Borda vermelha ao focar */
 }
 
 .login__button {
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    background-color: #ddd;
-    cursor: pointer;
-    color: #121212;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #FF0000; /* Fundo vermelho */
+  cursor: pointer;
+  color: #121212; /* Texto escuro */
+  transition: background 0.3s, transform 0.2s;
 }
 
 .login__button:hover {
-    background-color: #fff;
+  background-color: #cc0000; /* Vermelho mais escuro ao passar o mouse */
+  transform: scale(1.05);
 }
 
 .chat {
-    width: 100%;
-    height: 100%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
 }
 
 .chat__messages {
-    flex-grow: 1;
-    padding: 30px 30px 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  flex-grow: 1;
+  padding: 30px 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  max-height: calc(100vh - 150px);
 }
 
 .chat__form {
-    background-color: #191919;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+  background-color: rgba(18, 18, 18, 0.9); /* Fundo escuro */
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
 }
 
 .chat__input {
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    flex-grow: 1;
-    background-color: #212121;
-    outline: none;
-    color: #f2f2f2;
-    font-size: 1rem;
+  border: 2px solid #FF0000; /* Borda vermelha */
+  padding: 10px;
+  border-radius: 8px;
+  flex-grow: 1;
+  background-color: #212121; /* Fundo escuro */
+  outline: none;
+  color: #FF0000; /* Texto vermelho */
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.chat__input:focus {
+  border: 2px solid #FF0000; /* Borda vermelha ao focar */
 }
 
 .chat__button {
-    border: none;
-    background: none;
-    color: #f2f2f2;
-    cursor: pointer;
+  border: none;
+  background: none;
+  color: #FF0000; /* Texto vermelho */
+  cursor: pointer;
 }
 
 .chat__button > span {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .chat__messages > div {
-    padding: 10px;
-    width: 100%;
-    max-width: 250px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-    line-height: 22px;
+  padding: 10px;
+  width: 100%;
+  max-width: 250px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 22px;
+  border-radius: 10px;
+  transition: background 0.3s;
 }
 
 .message--self {
-    background-color: #f2f2f2;
-    color: #121212;
-    border-radius: 10px 10px 0 10px;
-    align-self: flex-end;
+  background-color: rgba(172, 206, 160, 0.8);
+  color: #121212;
+  align-self: flex-end;
 }
 
 .message--other {
-    background-color: #333;
-    color: #f2f2f2;
-    border-radius: 0 10px 10px 10px;
-    align-self: flex-start;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #FF0000; /* Texto vermelho */
+  align-self: flex-start;
 }
 
 .message--sender {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: cadetblue;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: #FF0000; /* Texto vermelho */
+}
+
+.message-time {
+  font-size: 0.7em;
+  color: #555;
+  display: block;
+  float: right;
+  margin-top: 2px;
+}
+
+.menu__config {
+  background-color: rgba(18, 18, 18, 0.9); /* Fundo escuro */
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-flex;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
+}
+
+.users-list {
+  color: #FF0000; /* Texto vermelho */
+  font-size: 0.9rem;
+}
+
+.record-button {
+  border: none;
+  background: none;
+  color: #FF0000; /* Texto vermelho */
+  cursor: pointer;
+  font-size: 1.8rem;
+  transition: transform 0.2s;
+}
+
+.record-button:hover {
+  transform: scale(1.1);
+  color: #FFFF00; /* Amarelo ao passar o mouse */
+}
+
+.file-input-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.chat__file-input {
+  display: none; /* Esconde o input original */
+}
+
+.file-input-button {
+  color: white; /* Cor do texto */
+  padding: 10px 10px; /* Espaçamento interno */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+}
+
+.file-input-button span {
+  margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: darkred; /* Vermelho escuro */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  color: #FF0000; /* Texto vermelho */
+  cursor: pointer;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+  margin-bottom: 10px; /* Espaço entre o botão e o título */
+}
+
+.infocon {
+  position: fixed;
+  top: 9%;
+  bottom: 30%;
+  left: 60px;
+  width: 60%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.41);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
+  z-index: 999;
+  display: none;
+  border-radius: 0 0 15px 15px;
+}
+
+.z {
+  position: fixed;
+  top: 9%;
+  bottom: 30%;
+  left: 3px;
+  width: 12%;
+  height: 30%;
+  background-color: rgba(18, 18, 18, 0.9); /* Fundo escuro */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra vermelha */
+  z-index: 999; /* Certifique-se de que o menu fique acima de outros elementos */
+  display: none; /* Oculta o menu inicialmente */
+  border-radius: 0 0 15px 15px;
+}
+
+.export-button {
+  background-color: transparent;
+  border: none;
+  color: #FF0000; /* Texto vermelho */
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}
+
+#add-button {
+  background-color: transparent;
+  border: none;
+  color: #FF0000; /* Texto vermelho */
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}
+
+.botao-compartilhar {
+  background-color: transparent;
+  border: none;
+  color: #FF0000; /* Texto vermelho */
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}
+
+.info__btn {
+  background-color: transparent;
+  border: none;
+  color: #FF0000; /* Texto vermelho */
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}
+
+.info__paragraph {
+  margin: 10px;
+  font-family: 'Times New Roman', serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 1); /* Texto branco */
+}
+
+.info__paragraph::first-letter {
+  font-size: 18pt;
+  font-weight: bolder;
 }
